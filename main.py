@@ -70,7 +70,9 @@ async def create_account(ctx, username: str, password: str):
 async def delete_account(ctx, username: str, password: str):
     request = { KEY_USERNAME: username, KEY_PASSWORD: password }
     def callback(payload):
-        del user_map[ctx.user.id]
+        user_id = ctx.user.id
+        if user_id in user_map:
+            del user_map[user_id]
         return "Account deleted: " + username
     await spheem_cmd(ctx, VERB_DELETE, request, callback)
 
@@ -105,7 +107,7 @@ async def bal(ctx):
 async def pay(ctx, recipient: str, amount: int,):
     request = { KEY_RECIPIENT: recipient, KEY_AMOUNT: amount }
     def callback(payload):
-        return "Transcation successful."
+        return "Transaction successful."
     await spheem_user_cmd(ctx, VERB_PAY, request, callback)
     
 try:
