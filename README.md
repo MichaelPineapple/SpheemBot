@@ -2,7 +2,7 @@
 
 Discord bot which serves as an alternative frontend for Spheem.
 
-Use this link to add it to your Discord server:
+Add SpheemBot to your Discord server:
 https://discord.com/oauth2/authorize?client_id=1008977922247368704&permissions=68608&integration_type=0&scope=bot
 
 ### Commands
