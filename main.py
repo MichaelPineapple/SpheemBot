@@ -32,7 +32,7 @@ async def on_ready():
     print("Logged in as: " + str(bot.user))
     
 async def spheem_cmd(ctx, verb, request, success_callback):
-    responseRaw = requests.post("https://meowcle.net/cgi-bin/Spheem-API/endpoints/" + verb + ".js", json=request)
+    responseRaw = requests.post("https://meowcle.net/cgi-bin/Spheem/endpoints/" + verb + ".js", json=request)
     response = json.loads(responseRaw.content)
     result = response[KEY_RESULT]
     payload = response[KEY_PAYLOAD]
