@@ -11,7 +11,7 @@ https://discord.com/oauth2/authorize?client_id=1008977922247368704&permissions=6
 /create_account <username> <password>    (Create a new account)
 /delete_account <username> <password>    (Delete an account)
 /login <username> <password>             (Login to an account)
-/logout                                  (Logout of current account)
-/bal                                     (View current balance)
+/logout                                  (Logout of current account, must be logged in)
+/bal                                     (View current balance, must be logged in)
 /pay <recipient> <amount>                (Transfer funds to another account, must be logged in)
 ```
