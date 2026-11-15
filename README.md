@@ -6,8 +6,6 @@ Use this link to add it to your Discord server: https://discord.com/oauth2/autho
 
 Main Spheem website: https://meowcle.net/Spheem
 
-*Related Repos*
-
-Spheem: https://github.com/MichaelPineapple/Spheem
-
+### Related Repos
+Spheem: https://github.com/MichaelPineapple/Spheem <br>
 SpheemAPI: https://github.com/MichaelPineapple/Spheem-API
