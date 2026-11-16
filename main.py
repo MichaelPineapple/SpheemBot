@@ -9,6 +9,7 @@ RC_FAIL = "FAIL"
 
 KEY_USERNAME = "username"
 KEY_PASSWORD = "password"
+KEY_NEWPASSWORD = "new_password"
 KEY_RESULT = "result"
 KEY_PAYLOAD = "payload"
 KEY_RECIPIENT = "recipient"
@@ -17,6 +18,7 @@ KEY_AMOUNT = "amount"
 VERB_HELLO = "hello"
 VERB_LOGIN = "login"
 VERB_CREATE = "create"
+VERB_UPDATE = "update"
 VERB_DELETE = "delete"
 VERB_PAY = "pay"
 
@@ -94,6 +96,14 @@ async def logout(ctx):
         del user_map[user_id]
         reply = "Successfuly Logged out."
     await ctx.response.send_message(reply)
+
+# *** Update Password ***
+@bot.tree.command(name="update_password", description="Update Spheem account password.")
+async def pay(ctx, new_password: str):
+    request = { KEY_NEWPASSWORD: new_password }
+    def callback(payload):
+        return "Password updated."
+    await spheem_user_cmd(ctx, VERB_UPDATE, request, callback)
 
 # *** Balance ***
 @bot.tree.command(name="bal", description="Check your Spheem balance.")
